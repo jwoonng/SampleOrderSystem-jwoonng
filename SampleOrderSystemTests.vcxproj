@@ -75,8 +75,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="tests\Test_Phase1.cpp" />
+    <ClCompile Include="tests\Test_Phase2.cpp" />
     <ClCompile Include="tests\TestRunner.cpp" />
     <ClCompile Include="src\util\ConsoleUtil.cpp" />
+    <ClCompile Include="src\model\Sample.cpp" />
+    <ClCompile Include="src\model\Order.cpp" />
+    <ClCompile Include="src\model\ProductionJob.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

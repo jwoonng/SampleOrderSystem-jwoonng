@@ -144,12 +144,23 @@
     <ClCompile Include="tests\Test_Phase1.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'!='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="tests\Test_Phase2.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'!='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="tests\TestRunner.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'!='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
+    <!-- 모델 구현 파일 -->
+    <ClCompile Include="src\model\Sample.cpp" />
+    <ClCompile Include="src\model\Order.cpp" />
+    <ClCompile Include="src\model\ProductionJob.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\model\Model.h" />
+    <ClInclude Include="src\model\Sample.h" />
+    <ClInclude Include="src\model\Order.h" />
+    <ClInclude Include="src\model\ProductionJob.h" />
+    <ClInclude Include="src\model\UserRole.h" />
     <ClInclude Include="src\view\View.h" />
     <ClInclude Include="src\controller\Controller.h" />
     <ClInclude Include="src\service\Service.h" />
