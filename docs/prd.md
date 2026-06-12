@@ -62,6 +62,7 @@
 | 3-5 | 모니터링 | [feature/prd_005.md](feature/prd_005.md) | [ ] |
 | 3-6 | 생산라인 | [feature/prd_006.md](feature/prd_006.md) | [ ] |
 | 3-7 | 출고 처리 | [feature/prd_007.md](feature/prd_007.md) | [ ] |
+| 3-8 | 실시간 생산 처리 | [feature/prd_008.md](feature/prd_008.md) | [ ] |
 
 ---
 
