@@ -7,7 +7,7 @@
 
 | Phase | 제목 | 세부 계획 | 상태 |
 |-------|------|-----------|------|
-| 1 | 프로젝트 기반 구조 | [feature/plan_001.md](feature/plan_001.md) | [ ] |
+| 1 | 프로젝트 기반 구조 | [feature/plan_001.md](feature/plan_001.md) | [x] |
 | 2 | 도메인 모델 | [feature/plan_002.md](feature/plan_002.md) | [ ] |
 | 3 | Repository 계층 | [feature/plan_003.md](feature/plan_003.md) | [ ] |
 | 4 | Service 계층 — 시료 관리 | [feature/plan_004.md](feature/plan_004.md) | [ ] |
