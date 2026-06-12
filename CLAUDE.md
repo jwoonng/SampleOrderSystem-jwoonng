@@ -23,20 +23,26 @@
 - Visual Studio에서 파일 저장 시: `파일 > 다른 이름으로 저장 > 저장 버튼 옆 ▼ > 인코딩하여 저장 > UTF-8 with BOM` 선택.
 
 ### 콘솔 출력 (런타임)
-`main()` 진입 직후 아래 설정을 반드시 적용한다.
+`ConsoleUtil::initEncoding()` 을 `main()` 진입 직후 반드시 호출한다.
 
 ```cpp
 #include <io.h>
 #include <fcntl.h>
+#include <windows.h>
 
-// wide character 스트림 모드 설정 (wcout/wcin 한글 깨짐 방지)
-_setmode(_fileno(stdout), _O_U16TEXT);
+// 콘솔 코드페이지를 UTF-8로 설정 (PowerShell 등 외부 콘솔 한글 깨짐 방지)
+SetConsoleOutputCP(CP_UTF8);
+SetConsoleCP(CP_UTF8);
+
+// stdout/stderr: _O_U8TEXT — wcout을 UTF-8로 출력 (파이프·PowerShell 호환)
+// stdin:         _O_U16TEXT — 콘솔 한글 입력 처리
+_setmode(_fileno(stdout), _O_U8TEXT);
 _setmode(_fileno(stdin),  _O_U16TEXT);
-_setmode(_fileno(stderr), _O_U16TEXT);
+_setmode(_fileno(stderr), _O_U8TEXT);
 ```
 
 - `wstring`, `wcout`, `wcin` 을 일관되게 사용한다.
-- `_O_U16TEXT` 모드 적용 후 `cout` / `printf` 혼용 금지 (스트림 충돌).
+- `_O_U8TEXT` / `_O_U16TEXT` 모드 적용 후 `cout` / `printf` 혼용 금지 (스트림 충돌).
 
 ### 프로젝트 설정
 - `.vcxproj` 의 `<CharacterSet>` 은 `Unicode` 로 유지한다.
