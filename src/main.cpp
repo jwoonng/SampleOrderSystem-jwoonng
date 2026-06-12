@@ -11,6 +11,7 @@
 #include "repository/JsonProductionRepository.h"
 #include "service/SampleService.h"
 #include "service/OrderService.h"
+#include "service/ProductionService.h"
 
 // ──────────────────────────────────────────────
 //  출력 헬퍼
@@ -311,6 +312,78 @@ static void runOrderMenu(OrderService& orderService, SampleService& sampleServic
 }
 
 // ──────────────────────────────────────────────
+//  생산라인 관리 서브메뉴
+// ──────────────────────────────────────────────
+
+static void runProductionMenu(ProductionService& productionService)
+{
+    int choice = 0;
+    while (true)
+    {
+        std::wcout << L"\n=== 생산라인 관리 ===\n";
+        std::wcout << L"1. 생산 큐 조회\n";
+        std::wcout << L"2. 현재 생산 작업 확인\n";
+        std::wcout << L"3. 생산 완료 체크\n";
+        std::wcout << L"0. 뒤로\n";
+        std::wcout << L"선택 > ";
+        std::wcin >> choice;
+
+        if (choice == 1)
+        {
+            auto queue = productionService.getQueue();
+            if (queue.empty())
+                std::wcout << L"생산 큐가 비어 있습니다.\n";
+            else
+            {
+                std::wcout << L"[생산 큐 목록]\n";
+                for (const auto& job : queue)
+                {
+                    std::wcout << L"  " << job.getJobId()
+                               << L" | 주문:" << job.getOrderId()
+                               << L" | 시료:" << job.getSampleId()
+                               << L" | 실생산량:" << job.getActualQty() << L"ea"
+                               << L" | 총생산시간:" << job.getTotalTime() << L"min\n";
+                }
+            }
+        }
+        else if (choice == 2)
+        {
+            auto jobOpt = productionService.getCurrentJob();
+            if (!jobOpt.has_value())
+                std::wcout << L"현재 진행 중인 생산 작업이 없습니다.\n";
+            else
+            {
+                const auto& job = jobOpt.value();
+                std::wcout << L"[현재 작업] " << job.getJobId()
+                           << L" | 시작:" << job.getStartTime()
+                           << L" | 실생산량:" << job.getActualQty() << L"ea\n";
+            }
+        }
+        else if (choice == 3)
+        {
+            std::wstring datePart, timePart;
+            std::wcout << L"현재 시간 입력 (예: 2026-06-12 11:00): ";
+            std::wcin >> datePart >> timePart;
+            std::wstring currentTime = datePart + L" " + timePart;
+
+            bool completed = productionService.checkCompletion(currentTime);
+            if (completed)
+                std::wcout << L"[완료] 생산이 완료되었습니다. 재고 및 주문 상태가 갱신되었습니다.\n";
+            else
+                std::wcout << L"[진행 중] 아직 생산이 완료되지 않았습니다.\n";
+        }
+        else if (choice == 0)
+        {
+            break;
+        }
+        else
+        {
+            std::wcout << L"잘못된 선택입니다.\n";
+        }
+    }
+}
+
+// ──────────────────────────────────────────────
 //  진입점
 // ──────────────────────────────────────────────
 
@@ -325,8 +398,9 @@ int main()
     JsonOrderRepository      orderRepo(L"data/orders.json");
     JsonProductionRepository productionRepo(L"data/production.json");
 
-    SampleService sampleService(sampleRepo);
-    OrderService  orderService(orderRepo, sampleRepo, productionRepo);
+    SampleService     sampleService(sampleRepo);
+    OrderService      orderService(orderRepo, sampleRepo, productionRepo);
+    ProductionService productionService(productionRepo, sampleRepo, orderRepo);
 
     int roleChoice = 0;
     while (true)
@@ -334,6 +408,7 @@ int main()
         std::wcout << L"\n=== 시료 생산 주문 관리 시스템 (임시 UI) ===\n";
         std::wcout << L"1. 시료 관리  (생산 담당자)\n";
         std::wcout << L"2. 주문 관리  (주문 담당자)\n";
+        std::wcout << L"3. 생산라인 관리 (생산 담당자)\n";
         std::wcout << L"0. 종료\n";
         std::wcout << L"선택 > ";
         std::wcin >> roleChoice;
@@ -345,6 +420,10 @@ int main()
         else if (roleChoice == 2)
         {
             runOrderMenu(orderService, sampleService);
+        }
+        else if (roleChoice == 3)
+        {
+            runProductionMenu(productionService);
         }
         else if (roleChoice == 0)
         {

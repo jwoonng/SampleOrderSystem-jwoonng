@@ -173,6 +173,8 @@
     <ClCompile Include="src\repository\JsonSampleRepository.cpp" />
     <ClCompile Include="src\repository\JsonOrderRepository.cpp" />
     <ClCompile Include="src\repository\JsonProductionRepository.cpp" />
+    <!-- Phase 6: ProductionService -->
+    <ClCompile Include="src\service\ProductionService.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\model\Model.h" />
@@ -185,6 +187,7 @@
     <ClInclude Include="src\service\Service.h" />
     <ClInclude Include="src\service\SampleService.h" />
     <ClInclude Include="src\service\OrderService.h" />
+    <ClInclude Include="src\service\ProductionService.h" />
     <ClInclude Include="src\repository\Repository.h" />
     <ClInclude Include="src\repository\ISampleRepository.h" />
     <ClInclude Include="src\repository\IOrderRepository.h" />

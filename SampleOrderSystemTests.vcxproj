@@ -79,12 +79,16 @@
     <ClCompile Include="tests\Test_Phase3.cpp" />
     <ClCompile Include="tests\Test_Phase4.cpp" />
     <ClCompile Include="tests\Test_Phase5.cpp" />
+    <ClCompile Include="tests\Test_Phase6.cpp" />
     <ClCompile Include="tests\TestRunner.cpp" />
     <ClCompile Include="src\util\ConsoleUtil.cpp" />
+    <ClCompile Include="src\util\FileUtil.cpp" />
+    <ClCompile Include="src\service\SampleService.cpp" />
     <ClCompile Include="src\model\Sample.cpp" />
     <ClCompile Include="src\model\Order.cpp" />
     <ClCompile Include="src\model\ProductionJob.cpp" />
     <ClCompile Include="src\service\OrderService.cpp" />
+    <ClCompile Include="src\service\ProductionService.cpp" />
     <ClCompile Include="src\repository\JsonSampleRepository.cpp" />
     <ClCompile Include="src\repository\JsonOrderRepository.cpp" />
     <ClCompile Include="src\repository\JsonProductionRepository.cpp" />
