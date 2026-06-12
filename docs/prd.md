@@ -102,6 +102,7 @@
 | 아키텍처 | MVC 계층 분리, Repository 패턴 |
 | 데이터 저장 | 데이터 영속성 지원 (재실행 후에도 데이터 유지) |
 | 개발 방식 | TDD (Red → Green → Verifying), Clean Code, SRP |
+| 테스트 프레임워크 | Google Test / Google Mock (gtest, gmock) |
 
 ---
 

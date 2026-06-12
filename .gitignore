@@ -364,3 +364,10 @@ FodyWeavers.xsd
 
 # PDF files
 *.pdf
+
+# Test binaries
+tests/*.exe
+tests/*.pdb
+
+# MSBuild intermediate output (SampleOr.<ProjectGuid> 형식)
+SampleOr.*/
