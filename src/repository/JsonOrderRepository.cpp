@@ -121,7 +121,7 @@ void JsonOrderRepository::saveToFile() const
     oss << L"]";
 
     FileUtil::writeWStringToUtf8File(tmpPath, oss.str());
-    _wrename(tmpPath.c_str(), filePath_.c_str());
+    MoveFileExW(tmpPath.c_str(), filePath_.c_str(), MOVEFILE_REPLACE_EXISTING);
 }
 
 // ─────────────────────────────────────────

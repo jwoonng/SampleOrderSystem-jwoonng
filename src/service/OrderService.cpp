@@ -104,6 +104,11 @@ void OrderService::releaseOrder(const std::wstring& orderId)
     orderRepo_.update(order);
 }
 
+std::vector<Order> OrderService::getAllOrders() const
+{
+    return orderRepo_.findAll();
+}
+
 std::vector<Order> OrderService::getReservedOrders() const
 {
     return orderRepo_.findByStatus(OrderStatus::Reserved);

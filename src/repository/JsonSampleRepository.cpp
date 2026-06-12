@@ -116,7 +116,9 @@ void JsonSampleRepository::saveToFile() const
     oss << L"]";
 
     FileUtil::writeWStringToUtf8File(tmpPath, oss.str());
-    _wrename(tmpPath.c_str(), filePath_.c_str());
+    // Windows에서 _wrename은 대상 파일이 존재하면 실패하므로
+    // MoveFileExW + MOVEFILE_REPLACE_EXISTING으로 원자적 교체
+    MoveFileExW(tmpPath.c_str(), filePath_.c_str(), MOVEFILE_REPLACE_EXISTING);
 }
 
 // ─────────────────────────────────────────

@@ -80,6 +80,7 @@
     <ClCompile Include="tests\Test_Phase4.cpp" />
     <ClCompile Include="tests\Test_Phase5.cpp" />
     <ClCompile Include="tests\Test_Phase6.cpp" />
+    <ClCompile Include="tests\Test_Phase7.cpp" />
     <ClCompile Include="tests\TestRunner.cpp" />
     <ClCompile Include="src\util\ConsoleUtil.cpp" />
     <ClCompile Include="src\util\FileUtil.cpp" />
@@ -92,6 +93,26 @@
     <ClCompile Include="src\repository\JsonSampleRepository.cpp" />
     <ClCompile Include="src\repository\JsonOrderRepository.cpp" />
     <ClCompile Include="src\repository\JsonProductionRepository.cpp" />
+    <!-- Phase 7: 유틸리티 -->
+    <ClCompile Include="src\util\ConsoleHelper.cpp" />
+    <ClCompile Include="src\util\InputHelper.cpp" />
+    <ClCompile Include="src\util\OrderIdGenerator.cpp" />
+    <!-- Phase 7: View -->
+    <ClCompile Include="src\view\MainView.cpp" />
+    <ClCompile Include="src\view\SampleView.cpp" />
+    <ClCompile Include="src\view\OrderView.cpp" />
+    <ClCompile Include="src\view\ApprovalView.cpp" />
+    <ClCompile Include="src\view\MonitoringView.cpp" />
+    <ClCompile Include="src\view\ProductionView.cpp" />
+    <ClCompile Include="src\view\ReleaseView.cpp" />
+    <!-- Phase 7: Controller -->
+    <ClCompile Include="src\controller\MainController.cpp" />
+    <ClCompile Include="src\controller\SampleController.cpp" />
+    <ClCompile Include="src\controller\OrderController.cpp" />
+    <ClCompile Include="src\controller\ApprovalController.cpp" />
+    <ClCompile Include="src\controller\MonitoringController.cpp" />
+    <ClCompile Include="src\controller\ProductionController.cpp" />
+    <ClCompile Include="src\controller\ReleaseController.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

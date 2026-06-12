@@ -28,6 +28,7 @@ public:
     void rejectOrder(const std::wstring& orderId);
     void releaseOrder(const std::wstring& orderId);
 
+    std::vector<Order> getAllOrders() const;
     std::vector<Order> getReservedOrders() const;
     std::vector<Order> getConfirmedOrders() const;
     std::optional<Order> findOrderById(const std::wstring& orderId) const;

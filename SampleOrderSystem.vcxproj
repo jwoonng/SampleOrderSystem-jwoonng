@@ -175,6 +175,33 @@
     <ClCompile Include="src\repository\JsonProductionRepository.cpp" />
     <!-- Phase 6: ProductionService -->
     <ClCompile Include="src\service\ProductionService.cpp" />
+    <!-- Phase 7: 유틸리티 -->
+    <ClCompile Include="src\util\ConsoleHelper.cpp" />
+    <ClCompile Include="src\util\InputHelper.cpp" />
+    <ClCompile Include="src\util\OrderIdGenerator.cpp" />
+    <!-- Phase 7: View -->
+    <ClCompile Include="src\view\MainView.cpp" />
+    <ClCompile Include="src\view\SampleView.cpp" />
+    <ClCompile Include="src\view\OrderView.cpp" />
+    <ClCompile Include="src\view\ApprovalView.cpp" />
+    <ClCompile Include="src\view\MonitoringView.cpp" />
+    <ClCompile Include="src\view\ProductionView.cpp" />
+    <ClCompile Include="src\view\ReleaseView.cpp" />
+    <!-- Phase 7: Controller -->
+    <ClCompile Include="src\controller\MainController.cpp" />
+    <ClCompile Include="src\controller\SampleController.cpp" />
+    <ClCompile Include="src\controller\OrderController.cpp" />
+    <ClCompile Include="src\controller\ApprovalController.cpp" />
+    <ClCompile Include="src\controller\MonitoringController.cpp" />
+    <ClCompile Include="src\controller\ProductionController.cpp" />
+    <ClCompile Include="src\controller\ReleaseController.cpp" />
+    <!-- Phase 7: Debug|x64 테스트 -->
+    <ClCompile Include="tests\Test_Phase6.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'!='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tests\Test_Phase7.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'!='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\model\Model.h" />
@@ -197,6 +224,23 @@
     <ClInclude Include="src\repository\JsonProductionRepository.h" />
     <ClInclude Include="src\util\ConsoleUtil.h" />
     <ClInclude Include="src\util\FileUtil.h" />
+    <ClInclude Include="src\util\ConsoleHelper.h" />
+    <ClInclude Include="src\util\InputHelper.h" />
+    <ClInclude Include="src\util\OrderIdGenerator.h" />
+    <ClInclude Include="src\view\MainView.h" />
+    <ClInclude Include="src\view\SampleView.h" />
+    <ClInclude Include="src\view\OrderView.h" />
+    <ClInclude Include="src\view\ApprovalView.h" />
+    <ClInclude Include="src\view\MonitoringView.h" />
+    <ClInclude Include="src\view\ProductionView.h" />
+    <ClInclude Include="src\view\ReleaseView.h" />
+    <ClInclude Include="src\controller\MainController.h" />
+    <ClInclude Include="src\controller\SampleController.h" />
+    <ClInclude Include="src\controller\OrderController.h" />
+    <ClInclude Include="src\controller\ApprovalController.h" />
+    <ClInclude Include="src\controller\MonitoringController.h" />
+    <ClInclude Include="src\controller\ProductionController.h" />
+    <ClInclude Include="src\controller\ReleaseController.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
