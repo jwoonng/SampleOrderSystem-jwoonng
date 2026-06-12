@@ -141,6 +141,7 @@
     </ClCompile>
     <!-- 공통: 비즈니스 로직 -->
     <ClCompile Include="src\util\ConsoleUtil.cpp" />
+    <ClCompile Include="src\util\FileUtil.cpp" />
     <!-- Debug|x64 전용: 테스트 파일 -->
     <ClCompile Include="tests\Test_Phase1.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'!='Debug|x64'">true</ExcludedFromBuild>
@@ -186,6 +187,7 @@
     <ClInclude Include="src\repository\JsonOrderRepository.h" />
     <ClInclude Include="src\repository\JsonProductionRepository.h" />
     <ClInclude Include="src\util\ConsoleUtil.h" />
+    <ClInclude Include="src\util\FileUtil.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -1,8 +1,6 @@
 ﻿// encoding: UTF-8 with BOM
 #pragma once
 #include "IProductionRepository.h"
-#include <vector>
-#include <string>
 
 class JsonProductionRepository : public IProductionRepository
 {

@@ -3,12 +3,17 @@
 #include <stdexcept>
 #include <cwctype>
 
+static constexpr size_t SAMPLE_ID_MIN_LENGTH    = 3;
+static constexpr size_t SAMPLE_ID_PREFIX_LENGTH = 2;
+static constexpr wchar_t SAMPLE_ID_LETTER       = L'S';
+static constexpr wchar_t SAMPLE_ID_SEPARATOR    = L'-';
+
 // S- 로 시작하고 뒤에 숫자가 1개 이상인지 수동 파싱으로 검사
 bool SampleService::isValidSampleId(const std::wstring& id)
 {
-    if (id.size() < 3) return false;
-    if (id[0] != L'S' || id[1] != L'-') return false;
-    for (size_t i = 2; i < id.size(); ++i)
+    if (id.size() < SAMPLE_ID_MIN_LENGTH) return false;
+    if (id[0] != SAMPLE_ID_LETTER || id[1] != SAMPLE_ID_SEPARATOR) return false;
+    for (size_t i = SAMPLE_ID_PREFIX_LENGTH; i < id.size(); ++i)
     {
         if (!iswdigit(id[i])) return false;
     }

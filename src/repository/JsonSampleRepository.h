@@ -1,8 +1,6 @@
 ﻿// encoding: UTF-8 with BOM
 #pragma once
 #include "ISampleRepository.h"
-#include <vector>
-#include <string>
 
 class JsonSampleRepository : public ISampleRepository
 {

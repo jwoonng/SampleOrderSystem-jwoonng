@@ -1,6 +1,7 @@
 ﻿// [임시 UI - Phase 7에서 MVC로 교체]
 // encoding: UTF-8 with BOM
 #include <iostream>
+#include <vector>
 #include <windows.h>
 #include "util/ConsoleUtil.h"
 #include "repository/JsonSampleRepository.h"

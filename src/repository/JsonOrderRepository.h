@@ -1,8 +1,6 @@
 ﻿// encoding: UTF-8 with BOM
 #pragma once
 #include "IOrderRepository.h"
-#include <vector>
-#include <string>
 
 class JsonOrderRepository : public IOrderRepository
 {

@@ -1,57 +1,9 @@
 ﻿// encoding: UTF-8 with BOM
 #include "repository/JsonSampleRepository.h"
-#include <fstream>
+#include "util/FileUtil.h"
 #include <sstream>
 #include <algorithm>
 #include <windows.h>
-
-// ─────────────────────────────────────────
-//  파일 읽기: UTF-8 -> wstring
-// ─────────────────────────────────────────
-static std::wstring readFileAsWString(const std::wstring& path)
-{
-    std::ifstream file(path, std::ios::binary);
-    if (!file.is_open())
-        return L"";
-
-    std::string bytes((std::istreambuf_iterator<char>(file)),
-                       std::istreambuf_iterator<char>());
-    file.close();
-
-    if (bytes.empty())
-        return L"";
-
-    // BOM 제거 (EF BB BF)
-    if (bytes.size() >= 3 &&
-        static_cast<unsigned char>(bytes[0]) == 0xEF &&
-        static_cast<unsigned char>(bytes[1]) == 0xBB &&
-        static_cast<unsigned char>(bytes[2]) == 0xBF)
-    {
-        bytes = bytes.substr(3);
-    }
-
-    int wlen = MultiByteToWideChar(CP_UTF8, 0, bytes.c_str(), static_cast<int>(bytes.size()), nullptr, 0);
-    if (wlen <= 0) return L"";
-    std::wstring result(wlen, L'\0');
-    MultiByteToWideChar(CP_UTF8, 0, bytes.c_str(), static_cast<int>(bytes.size()), &result[0], wlen);
-    return result;
-}
-
-// ─────────────────────────────────────────
-//  파일 쓰기: wstring -> UTF-8
-// ─────────────────────────────────────────
-static bool writeWStringToFile(const std::wstring& path, const std::wstring& content)
-{
-    int mlen = WideCharToMultiByte(CP_UTF8, 0, content.c_str(), static_cast<int>(content.size()), nullptr, 0, nullptr, nullptr);
-    if (mlen <= 0) return false;
-    std::string bytes(mlen, '\0');
-    WideCharToMultiByte(CP_UTF8, 0, content.c_str(), static_cast<int>(content.size()), &bytes[0], mlen, nullptr, nullptr);
-
-    std::ofstream file(path, std::ios::binary);
-    if (!file.is_open()) return false;
-    file.write(bytes.c_str(), bytes.size());
-    return true;
-}
 
 // ─────────────────────────────────────────
 //  헬퍼: JSON 문자열에서 key에 해당하는 값 추출
@@ -66,35 +18,35 @@ std::wstring JsonSampleRepository::extractValue(const std::wstring& json, const 
     pos += searchKey.size();
     while (pos < json.size() && json[pos] == L' ') ++pos;
 
-    if (json[pos] == L'"')
+    // 숫자 값: 쉼표 또는 닫는 중괄호 전까지 추출
+    if (json[pos] != L'"')
     {
-        ++pos;
-        std::wstring result;
-        while (pos < json.size() && json[pos] != L'"')
-        {
-            if (json[pos] == L'\\' && pos + 1 < json.size())
-            {
-                ++pos;
-                if (json[pos] == L'"') result += L'"';
-                else if (json[pos] == L'\\') result += L'\\';
-                else if (json[pos] == L'n') result += L'\n';
-                else result += json[pos];
-            }
-            else
-            {
-                result += json[pos];
-            }
-            ++pos;
-        }
-        return result;
-    }
-    else
-    {
-        std::wstring result;
+        std::wstring numericValue;
         while (pos < json.size() && json[pos] != L',' && json[pos] != L'}')
-            result += json[pos++];
-        return result;
+            numericValue += json[pos++];
+        return numericValue;
     }
+
+    // 문자열 값: 이스케이프 처리 포함
+    ++pos;
+    std::wstring stringValue;
+    while (pos < json.size() && json[pos] != L'"')
+    {
+        if (json[pos] == L'\\' && pos + 1 < json.size())
+        {
+            ++pos;
+            if (json[pos] == L'"')       stringValue += L'"';
+            else if (json[pos] == L'\\') stringValue += L'\\';
+            else if (json[pos] == L'n')  stringValue += L'\n';
+            else                         stringValue += json[pos];
+        }
+        else
+        {
+            stringValue += json[pos];
+        }
+        ++pos;
+    }
+    return stringValue;
 }
 
 // ─────────────────────────────────────────
@@ -132,7 +84,7 @@ Sample JsonSampleRepository::parseSampleFromJson(const std::wstring& json)
 void JsonSampleRepository::loadFromFile()
 {
     samples_.clear();
-    std::wstring content = readFileAsWString(filePath_);
+    std::wstring content = FileUtil::readUtf8FileAsWString(filePath_);
     if (content.empty()) return;
 
     auto start = content.find(L'{');
@@ -163,7 +115,7 @@ void JsonSampleRepository::saveToFile() const
     }
     oss << L"]";
 
-    writeWStringToFile(tmpPath, oss.str());
+    FileUtil::writeWStringToUtf8File(tmpPath, oss.str());
     _wrename(tmpPath.c_str(), filePath_.c_str());
 }
 
