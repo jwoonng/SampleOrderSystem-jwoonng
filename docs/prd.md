@@ -57,11 +57,11 @@
 |---|------|--------------|------|
 | 3-1 | 메인 메뉴 | [feature/prd_001.md](feature/prd_001.md) | [ ] |
 | 3-2 | 시료 관리 | [feature/prd_002.md](feature/prd_002.md) | [x] |
-| 3-3 | 시료 주문 | [feature/prd_003.md](feature/prd_003.md) | [ ] |
-| 3-4 | 주문 승인/거절 | [feature/prd_004.md](feature/prd_004.md) | [ ] |
+| 3-3 | 시료 주문 | [feature/prd_003.md](feature/prd_003.md) | [x] |
+| 3-4 | 주문 승인/거절 | [feature/prd_004.md](feature/prd_004.md) | [x] |
 | 3-5 | 모니터링 | [feature/prd_005.md](feature/prd_005.md) | [ ] |
 | 3-6 | 생산라인 | [feature/prd_006.md](feature/prd_006.md) | [ ] |
-| 3-7 | 출고 처리 | [feature/prd_007.md](feature/prd_007.md) | [ ] |
+| 3-7 | 출고 처리 | [feature/prd_007.md](feature/prd_007.md) | [x] |
 | 3-8 | 실시간 생산 처리 | [feature/prd_008.md](feature/prd_008.md) | [ ] |
 
 ---

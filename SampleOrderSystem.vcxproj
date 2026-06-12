@@ -164,6 +164,11 @@
     <ClCompile Include="src\model\ProductionJob.cpp" />
     <!-- Service 구현 파일 -->
     <ClCompile Include="src\service\SampleService.cpp" />
+    <ClCompile Include="src\service\OrderService.cpp" />
+    <!-- Debug|x64 전용: Phase5 테스트 -->
+    <ClCompile Include="tests\Test_Phase5.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'!='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <!-- Repository 구현 파일 -->
     <ClCompile Include="src\repository\JsonSampleRepository.cpp" />
     <ClCompile Include="src\repository\JsonOrderRepository.cpp" />
@@ -179,6 +184,7 @@
     <ClInclude Include="src\controller\Controller.h" />
     <ClInclude Include="src\service\Service.h" />
     <ClInclude Include="src\service\SampleService.h" />
+    <ClInclude Include="src\service\OrderService.h" />
     <ClInclude Include="src\repository\Repository.h" />
     <ClInclude Include="src\repository\ISampleRepository.h" />
     <ClInclude Include="src\repository\IOrderRepository.h" />
