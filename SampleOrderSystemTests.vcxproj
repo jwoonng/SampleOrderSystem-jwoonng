@@ -48,7 +48,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/utf-8 /FI"$(ProjectDir)tests\WStringGMockFix.h" %(AdditionalOptions)</AdditionalOptions>
       <AdditionalIncludeDirectories>src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -76,11 +76,15 @@
   <ItemGroup>
     <ClCompile Include="tests\Test_Phase1.cpp" />
     <ClCompile Include="tests\Test_Phase2.cpp" />
+    <ClCompile Include="tests\Test_Phase3.cpp" />
     <ClCompile Include="tests\TestRunner.cpp" />
     <ClCompile Include="src\util\ConsoleUtil.cpp" />
     <ClCompile Include="src\model\Sample.cpp" />
     <ClCompile Include="src\model\Order.cpp" />
     <ClCompile Include="src\model\ProductionJob.cpp" />
+    <ClCompile Include="src\repository\JsonSampleRepository.cpp" />
+    <ClCompile Include="src\repository\JsonOrderRepository.cpp" />
+    <ClCompile Include="src\repository\JsonProductionRepository.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

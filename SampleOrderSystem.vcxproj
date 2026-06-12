@@ -108,7 +108,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/utf-8 /FI"$(ProjectDir)tests\WStringGMockFix.h" %(AdditionalOptions)</AdditionalOptions>
       <AdditionalIncludeDirectories>src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -127,6 +127,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -147,6 +148,9 @@
     <ClCompile Include="tests\Test_Phase2.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'!='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="tests\Test_Phase3.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'!='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="tests\TestRunner.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'!='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
@@ -154,6 +158,10 @@
     <ClCompile Include="src\model\Sample.cpp" />
     <ClCompile Include="src\model\Order.cpp" />
     <ClCompile Include="src\model\ProductionJob.cpp" />
+    <!-- Repository 구현 파일 -->
+    <ClCompile Include="src\repository\JsonSampleRepository.cpp" />
+    <ClCompile Include="src\repository\JsonOrderRepository.cpp" />
+    <ClCompile Include="src\repository\JsonProductionRepository.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\model\Model.h" />
@@ -165,6 +173,12 @@
     <ClInclude Include="src\controller\Controller.h" />
     <ClInclude Include="src\service\Service.h" />
     <ClInclude Include="src\repository\Repository.h" />
+    <ClInclude Include="src\repository\ISampleRepository.h" />
+    <ClInclude Include="src\repository\IOrderRepository.h" />
+    <ClInclude Include="src\repository\IProductionRepository.h" />
+    <ClInclude Include="src\repository\JsonSampleRepository.h" />
+    <ClInclude Include="src\repository\JsonOrderRepository.h" />
+    <ClInclude Include="src\repository\JsonProductionRepository.h" />
     <ClInclude Include="src\util\ConsoleUtil.h" />
   </ItemGroup>
   <ItemGroup>
