@@ -47,10 +47,10 @@ void MonitoringView::showStockStatus(const std::vector<Sample>& samples,
                                       const std::vector<Order>& allOrders)
 {
     ConsoleHelper::printDivider();
-    std::wcout << std::left
-               << std::setw(22) << L"시료명"
-               << std::setw(8)  << L"재고"
-               << std::setw(8)  << L"상태"
+    // 컬럼 표시 너비: 시료명=22, 재고=8, 상태=[배지]+2공백=8, 잔여율=나머지
+    std::wcout << ConsoleHelper::padRight(L"시료명", 22)
+               << ConsoleHelper::padRight(L"재고", 8)
+               << ConsoleHelper::padRight(L"상태", 8)
                << L"잔여율\n";
     ConsoleHelper::printDivider();
 
@@ -77,8 +77,8 @@ void MonitoringView::showStockStatus(const std::vector<Sample>& samples,
         else if (statusStr == L"고갈")
             statusColor = FOREGROUND_RED | FOREGROUND_INTENSITY;
 
-        std::wcout << L"  " << std::setw(20) << s.getName()
-                   << std::setw(8) << s.getStock();
+        std::wcout << ConsoleHelper::padRight(s.getName(), 22)
+                   << std::left << std::setw(8) << s.getStock();
         ConsoleHelper::printBadge(statusStr, statusColor);
         std::wcout << L"  " << ConsoleHelper::buildProgressBar(percent, 10)
                    << L" " << percent << L"%\n";

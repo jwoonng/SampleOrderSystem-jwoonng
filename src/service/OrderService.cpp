@@ -4,6 +4,10 @@
 #include "model/Sample.h"
 #include <stdexcept>
 #include <cmath>
+#include <algorithm>
+
+// 실 생산량 계산 시 수율에 적용하는 오차 비율 (10% 감소 여유)
+static constexpr double PRODUCTION_ERROR_RATE = 0.9;
 
 OrderService::OrderService(IOrderRepository& orderRepo,
                            ISampleRepository& sampleRepo,
@@ -63,8 +67,8 @@ void OrderService::approveOrder(const std::wstring& orderId,
     else
     {
         int shortage   = quantity - stock;
-        double yield09 = sample.getYield() * 0.9;
-        int actualQty  = static_cast<int>(std::ceil(static_cast<double>(shortage) / yield09));
+        double adjustedYield = sample.getYield() * PRODUCTION_ERROR_RATE;
+        int actualQty  = static_cast<int>(std::ceil(static_cast<double>(shortage) / adjustedYield));
         double totalTime = sample.getAvgProdTime() * actualQty;
 
         ProductionJob job(jobId, orderId, order.getSampleId(),
@@ -117,6 +121,35 @@ std::vector<Order> OrderService::getReservedOrders() const
 std::vector<Order> OrderService::getConfirmedOrders() const
 {
     return orderRepo_.findByStatus(OrderStatus::Confirmed);
+}
+
+std::vector<Order> OrderService::getReleasableOrders() const
+{
+    auto confirmed = orderRepo_.findByStatus(OrderStatus::Confirmed);
+
+    // createdAt 오름차순 정렬 (먼저 들어온 주문이 앞)
+    std::sort(confirmed.begin(), confirmed.end(),
+              [](const Order& a, const Order& b) {
+                  return a.getCreatedAt() < b.getCreatedAt();
+              });
+
+    // 동일 시료에 대해서는 가장 먼저 들어온 주문만 출고 가능 (FIFO)
+    std::vector<Order> releasable;
+    for (const auto& order : confirmed)
+    {
+        bool alreadyAdded = false;
+        for (const auto& r : releasable)
+        {
+            if (r.getSampleId() == order.getSampleId())
+            {
+                alreadyAdded = true;
+                break;
+            }
+        }
+        if (!alreadyAdded)
+            releasable.push_back(order);
+    }
+    return releasable;
 }
 
 std::optional<Order> OrderService::findOrderById(const std::wstring& orderId) const

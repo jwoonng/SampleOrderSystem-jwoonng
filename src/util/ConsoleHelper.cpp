@@ -130,3 +130,32 @@ void ConsoleHelper::printBadge(const std::wstring& text, WORD color)
     std::wcout << L"[" << text << L"]";
     resetColor();
 }
+
+// ── 정렬 유틸 ─────────────────────────────────────────────────
+int ConsoleHelper::displayWidth(const std::wstring& s)
+{
+    int w = 0;
+    for (wchar_t c : s)
+    {
+        // 한글 자모, 한글 음절, CJK 통합 한자, 전각 문자 등 → 2칸
+        if ((c >= 0x1100 && c <= 0x11FF) ||   // 한글 자모
+            (c >= 0x2E80 && c <= 0x303F) ||   // CJK 부수
+            (c >= 0x3040 && c <= 0x33FF) ||   // 히라가나/가타카나/CJK 호환
+            (c >= 0x3400 && c <= 0x4DBF) ||   // CJK 확장 A
+            (c >= 0x4E00 && c <= 0x9FFF) ||   // CJK 통합 한자
+            (c >= 0xAC00 && c <= 0xD7AF) ||   // 한글 음절
+            (c >= 0xF900 && c <= 0xFAFF) ||   // CJK 호환 한자
+            (c >= 0xFF00 && c <= 0xFFEF))      // 전각 문자
+            w += 2;
+        else
+            w += 1;
+    }
+    return w;
+}
+
+std::wstring ConsoleHelper::padRight(const std::wstring& s, int width)
+{
+    int padding = width - displayWidth(s);
+    if (padding <= 0) return s;
+    return s + std::wstring(static_cast<std::wstring::size_type>(padding), L' ');
+}

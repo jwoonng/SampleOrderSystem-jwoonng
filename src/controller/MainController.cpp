@@ -84,7 +84,7 @@ void MainController::routeMenu(int choice)
     case 4:
     {
         MonitoringController ctrl;
-        ctrl.run(sampleService_, orderService_);
+        ctrl.run(sampleService_, orderService_, productionService_);
         break;
     }
     case 5:

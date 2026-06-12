@@ -31,6 +31,8 @@ public:
     std::vector<Order> getAllOrders() const;
     std::vector<Order> getReservedOrders() const;
     std::vector<Order> getConfirmedOrders() const;
+    // 동일 시료 FIFO 적용: 시료별로 가장 먼저 들어온 Confirmed 주문만 반환
+    std::vector<Order> getReleasableOrders() const;
     std::optional<Order> findOrderById(const std::wstring& orderId) const;
 
 private:

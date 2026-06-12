@@ -56,26 +56,43 @@ bool ProductionService::checkCompletion(const std::wstring& currentTime)
     const ProductionJob& job = jobOpt.value();
     int elapsed = getElapsedQty(job, currentTime);
 
-    if (elapsed < job.getActualQty())
-        return false;
-
     auto sampleOpt = sampleRepo_.findById(job.getSampleId());
     auto orderOpt  = orderRepo_.findById(job.getOrderId());
+    if (!sampleOpt.has_value() || !orderOpt.has_value())
+        return false;
 
     Sample sample = sampleOpt.value();
     Order  order  = orderOpt.value();
 
-    int newStock = sample.getStock() + job.getActualQty() - order.getQuantity();
-    Sample updatedSample(sample.getSampleId(), sample.getName(),
-                         sample.getAvgProdTime(), sample.getYield(), newStock);
-    sampleRepo_.update(updatedSample);
+    // Phase 2: actualQty 전체 완료 → 잉여분 재고 반영 후 큐 제거
+    if (elapsed >= job.getActualQty())
+    {
+        int newStock = sample.getStock() + job.getActualQty() - order.getQuantity();
+        Sample updatedSample(sample.getSampleId(), sample.getName(),
+                             sample.getAvgProdTime(), sample.getYield(), newStock);
+        sampleRepo_.update(updatedSample);
 
-    order.setStatus(OrderStatus::Confirmed);
-    orderRepo_.update(order);
+        // 아직 Producing 상태라면 Confirmed 전환 (Phase 1을 거치지 않은 경우)
+        if (order.getStatus() == OrderStatus::Producing)
+        {
+            order.setStatus(OrderStatus::Confirmed);
+            orderRepo_.update(order);
+        }
 
-    productionRepo_.dequeue();
+        productionRepo_.dequeue();
+        return true;
+    }
 
-    return true;
+    // Phase 1: shortage 달성 → 주문 출고 가능 상태로 전환, 생산은 actualQty까지 계속
+    // (재고는 건드리지 않음 — Phase 2에서 일괄 정산)
+    if (elapsed >= job.getShortage() && order.getStatus() == OrderStatus::Producing)
+    {
+        order.setStatus(OrderStatus::Confirmed);
+        orderRepo_.update(order);
+        return true;
+    }
+
+    return false;
 }
 
 long long ProductionService::parseToMinutes(const std::wstring& dateTime)

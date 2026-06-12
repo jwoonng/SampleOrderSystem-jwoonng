@@ -78,19 +78,21 @@ enum class UserRole
 
 ## 4. 핵심 도메인 모델
 
+**단위 정의**: 수량 단위 `ea` / 시간 단위 `min` / 개별 평균 생산시간 단위 `min/ea`
+
 ```
 Sample
   - sampleId   : wstring   // S-001 형식
   - name       : wstring
-  - avgProdTime: double     // 단위: min/ea
-  - yield      : double     // 0.0 ~ 1.0
-  - stock      : int
+  - avgProdTime: double     // 단위: min/ea (시료 1ea 생산에 소요되는 평균 시간)
+  - yield      : double     // 0.0 초과 ~ 1.0 이하
+  - stock      : int        // 단위: ea
 
 Order
   - orderId    : wstring   // ORD-YYYYMMDD-XXXX 형식
   - sampleId   : wstring
   - customerName: wstring
-  - quantity   : int
+  - quantity   : int        // 단위: ea
   - status     : OrderStatus
   - createdAt  : wstring
 
@@ -101,9 +103,9 @@ ProductionJob
   - jobId      : wstring
   - orderId    : wstring
   - sampleId   : wstring
-  - shortage   : int       // 부족분
-  - actualQty  : int       // 실 생산량 = ceil(shortage / (yield * 0.9))
-  - totalTime  : double    // avgProdTime * actualQty
+  - shortage   : int       // 부족분 (단위: ea)
+  - actualQty  : int       // 실 생산량 = ceil(shortage / (yield * 0.9)), 단위: ea
+  - totalTime  : double    // avgProdTime * actualQty, 단위: min
 ```
 
 ---

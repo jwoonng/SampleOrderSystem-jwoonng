@@ -32,8 +32,11 @@ void ProductionView::showCurrentJob(const ProductionJob& job,
     std::wcout << L"  주문번호  " << job.getOrderId()
                << L"   시료  " << sample.getName() << L"\n";
 
-    int actualQty = job.getActualQty();
-    int percent   = (actualQty > 0) ? (elapsedQty * 100 / actualQty) : 100;
+    // 진행률은 주문에 필요한 수량(shortage) 기준으로 표시
+    // shortage 달성(= 주문 충족) 시 100%에서 유지, 이후 잉여분 생산은 계속
+    int progressTarget = (job.getShortage() > 0) ? job.getShortage() : job.getActualQty();
+    int percent = (progressTarget > 0) ? (elapsedQty * 100 / progressTarget) : 100;
+    if (percent > 100) percent = 100;
 
     std::wcout << L"  진행  "
                << ConsoleHelper::buildProgressBar(percent, 10)
@@ -67,13 +70,13 @@ void ProductionView::showQueue(const std::vector<ProductionJob>& jobs,
     ConsoleHelper::printDivider();
     std::wcout << L"  대기 중인 주문 (FIFO 순)\n";
     ConsoleHelper::printDivider();
-    std::wcout << std::left
-               << std::setw(5)  << L"순서"
-               << std::setw(22) << L"주문번호"
-               << std::setw(16) << L"시료"
-               << std::setw(8)  << L"주문량"
-               << std::setw(8)  << L"부족분"
-               << std::setw(10) << L"실생산량"
+    // 컬럼 표시 너비: 순서=5, 주문번호=22, 시료=16, 주문량=8, 부족분=8, 실생산량=10, 예상완료=나머지
+    std::wcout << ConsoleHelper::padRight(L"순서", 5)
+               << ConsoleHelper::padRight(L"주문번호", 22)
+               << ConsoleHelper::padRight(L"시료", 16)
+               << ConsoleHelper::padRight(L"주문량", 8)
+               << ConsoleHelper::padRight(L"부족분", 8)
+               << ConsoleHelper::padRight(L"실생산량", 10)
                << L"예상완료\n";
     ConsoleHelper::printDivider();
 
@@ -98,12 +101,12 @@ void ProductionView::showQueue(const std::vector<ProductionJob>& jobs,
         swprintf_s(timeBuf, 16, L"%02d:%02d", hh, mm);
         accMin = completionMin;
 
-        std::wcout << L"  " << std::setw(3) << seq++
-                   << std::setw(22) << j.getOrderId()
-                   << std::setw(16) << sampleName
-                   << std::setw(8)  << j.getActualQty()
-                   << std::setw(8)  << j.getShortage()
-                   << std::setw(10) << j.getActualQty()
+        std::wcout << L"  " << std::left << std::setw(3) << seq++
+                   << ConsoleHelper::padRight(j.getOrderId(), 22)
+                   << ConsoleHelper::padRight(sampleName, 16)
+                   << std::left << std::setw(8)  << j.getActualQty()
+                   << std::left << std::setw(8)  << j.getShortage()
+                   << std::left << std::setw(10) << j.getActualQty()
                    << timeBuf << L"\n";
     }
     ConsoleHelper::printDivider();

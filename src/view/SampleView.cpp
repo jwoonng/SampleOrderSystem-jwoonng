@@ -18,22 +18,22 @@ void SampleView::showSampleTable(const std::vector<Sample>& samples,
                                   int page, int totalCount)
 {
     ConsoleHelper::printDivider();
-    std::wcout << std::left
-               << std::setw(10) << L" ID"
-               << std::setw(22) << L"시료명"
-               << std::setw(16) << L"평균생산시간"
-               << std::setw(8)  << L"수율"
+    // 컬럼 표시 너비(display columns): ID=10, 시료명=22, 평균생산시간=17(값8+단위9), 수율=8(값6+공백2)
+    std::wcout << ConsoleHelper::padRight(L" ID", 10)
+               << ConsoleHelper::padRight(L"시료명", 22)
+               << ConsoleHelper::padRight(L"평균생산시간", 17)
+               << ConsoleHelper::padRight(L"수율", 8)
                << L"현재재고\n";
     ConsoleHelper::printDivider();
 
     for (const auto& s : samples)
     {
         std::wcout << L" "
-                   << std::setw(9)  << s.getSampleId()
-                   << std::setw(22) << s.getName()
-                   << std::setw(8)  << s.getAvgProdTime()
+                   << ConsoleHelper::padRight(s.getSampleId(), 9)
+                   << ConsoleHelper::padRight(s.getName(), 22)
+                   << std::left << std::setw(8) << s.getAvgProdTime()
                    << L" min/ea  "
-                   << std::setw(6)  << s.getYield()
+                   << std::left << std::setw(6) << s.getYield()
                    << L"  "
                    << s.getStock() << L" ea\n";
     }

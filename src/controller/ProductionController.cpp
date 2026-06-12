@@ -18,7 +18,7 @@ void ProductionController::showProductionStatus(ProductionService& productionSer
                                                   OrderService& orderService)
 {
     std::wstring currentTime = ConsoleHelper::getCurrentTimeString();
-    productionService.checkCompletion(currentTime);
+    while (productionService.checkCompletion(currentTime)) {}
 
     auto samples = sampleService.getAllSamples();
     auto queue   = productionService.getQueue();

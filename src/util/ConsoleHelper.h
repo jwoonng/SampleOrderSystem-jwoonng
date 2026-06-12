@@ -36,6 +36,12 @@ public:
     // 예: printBadge(L"CONFIRMED", Green)
     static void printBadge(const std::wstring& text, WORD color);
 
+    // ── 정렬 유틸 ────────────────────────────────────────────
+    // 한글/CJK = 2칸, 그 외 = 1칸으로 계산한 표시 너비
+    static int displayWidth(const std::wstring& s);
+    // 표시 너비 기준으로 오른쪽을 공백으로 채워 width 칸으로 맞춤
+    static std::wstring padRight(const std::wstring& s, int width);
+
 private:
     static void setColor(WORD color);
     static void resetColor();

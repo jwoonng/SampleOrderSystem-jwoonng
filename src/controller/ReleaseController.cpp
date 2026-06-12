@@ -6,7 +6,7 @@
 
 void ReleaseController::run(OrderService& orderService, SampleService& sampleService)
 {
-    auto confirmed  = orderService.getConfirmedOrders();
+    auto confirmed  = orderService.getReleasableOrders();
     auto allSamples = sampleService.getAllSamples();
 
     if (confirmed.empty())
@@ -25,7 +25,7 @@ void ReleaseController::handleRelease(OrderService& orderService,
 {
     ReleaseView view;
     int idx = view.promptChoice();
-    auto confirmed = orderService.getConfirmedOrders();
+    auto confirmed = orderService.getReleasableOrders();
 
     if (idx < 1 || idx > static_cast<int>(confirmed.size()))
     {

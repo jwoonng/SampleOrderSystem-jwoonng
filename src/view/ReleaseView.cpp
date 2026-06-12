@@ -11,11 +11,10 @@ void ReleaseView::showConfirmedList(const std::vector<Order>& orders,
     ConsoleHelper::printDoubleDivider();
     ConsoleHelper::printCyan(L"  [6] 출고 처리\n");
     ConsoleHelper::printDivider();
-    std::wcout << std::left
-               << std::setw(5)  << L"번호"
-               << std::setw(22) << L"주문번호"
-               << std::setw(16) << L"고객"
-               << std::setw(16) << L"시료"
+    std::wcout << ConsoleHelper::padRight(L"번호", 5)
+               << ConsoleHelper::padRight(L"주문번호", 22)
+               << ConsoleHelper::padRight(L"고객", 16)
+               << ConsoleHelper::padRight(L"시료", 16)
                << L"수량\n";
     ConsoleHelper::printDivider();
 
@@ -31,10 +30,10 @@ void ReleaseView::showConfirmedList(const std::vector<Order>& orders,
                 break;
             }
         }
-        std::wcout << L"  " << std::setw(3) << idx++
-                   << std::setw(22) << o.getOrderId()
-                   << std::setw(16) << o.getCustomerName()
-                   << std::setw(16) << sampleName
+        std::wcout << L"  " << std::left << std::setw(3) << idx++
+                   << ConsoleHelper::padRight(o.getOrderId(), 22)
+                   << ConsoleHelper::padRight(o.getCustomerName(), 16)
+                   << ConsoleHelper::padRight(sampleName, 16)
                    << o.getQuantity() << L" ea\n";
     }
     ConsoleHelper::printDivider();

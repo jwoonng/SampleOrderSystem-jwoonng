@@ -6,18 +6,20 @@
 #include <iomanip>
 #include <algorithm>
 
+// 실 생산량 계산 시 수율에 적용하는 오차 비율 (OrderService와 동일한 값 유지)
+static constexpr double PRODUCTION_ERROR_RATE = 0.9;
+
 void ApprovalView::showReservedList(const std::vector<Order>& orders,
                                      const std::vector<Sample>& allSamples)
 {
     ConsoleHelper::printDoubleDivider();
     ConsoleHelper::printCyan(L"  [3] 주문 승인/거절\n");
     ConsoleHelper::printDivider();
-    std::wcout << std::left
-               << std::setw(5)  << L"번호"
-               << std::setw(22) << L"주문번호"
-               << std::setw(16) << L"고객"
-               << std::setw(16) << L"시료"
-               << std::setw(8)  << L"수량"
+    std::wcout << ConsoleHelper::padRight(L"번호", 5)
+               << ConsoleHelper::padRight(L"주문번호", 22)
+               << ConsoleHelper::padRight(L"고객", 16)
+               << ConsoleHelper::padRight(L"시료", 16)
+               << ConsoleHelper::padRight(L"수량", 8)
                << L"상태\n";
     ConsoleHelper::printDivider();
 
@@ -33,11 +35,11 @@ void ApprovalView::showReservedList(const std::vector<Order>& orders,
                 break;
             }
         }
-        std::wcout << L"  " << std::setw(3) << idx++
-                   << std::setw(22) << o.getOrderId()
-                   << std::setw(16) << o.getCustomerName()
-                   << std::setw(16) << sampleName
-                   << std::setw(8)  << o.getQuantity()
+        std::wcout << L"  " << std::left << std::setw(3) << idx++
+                   << ConsoleHelper::padRight(o.getOrderId(), 22)
+                   << ConsoleHelper::padRight(o.getCustomerName(), 16)
+                   << ConsoleHelper::padRight(sampleName, 16)
+                   << std::left << std::setw(8) << o.getQuantity()
                    << L"RESERVED\n";
     }
     ConsoleHelper::printDivider();
@@ -57,9 +59,9 @@ void ApprovalView::showStockCheck(const Sample& sample, const Order& order)
     else
     {
         int shortage = order.getQuantity() - sample.getStock();
-        double yield09 = sample.getYield() * 0.9;
+        double adjustedYield = sample.getYield() * PRODUCTION_ERROR_RATE;
         int actualQty = static_cast<int>(
-            std::ceil(static_cast<double>(shortage) / yield09));
+            std::ceil(static_cast<double>(shortage) / adjustedYield));
         double totalTime = sample.getAvgProdTime() * actualQty;
 
         std::wcout << L"  재고 부족.  부족분 ";
