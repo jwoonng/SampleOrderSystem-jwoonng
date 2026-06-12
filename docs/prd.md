@@ -56,7 +56,7 @@
 | # | 기능 | 세부 요구사항 | 상태 |
 |---|------|--------------|------|
 | 3-1 | 메인 메뉴 | [feature/prd_001.md](feature/prd_001.md) | [ ] |
-| 3-2 | 시료 관리 | [feature/prd_002.md](feature/prd_002.md) | [ ] |
+| 3-2 | 시료 관리 | [feature/prd_002.md](feature/prd_002.md) | [x] |
 | 3-3 | 시료 주문 | [feature/prd_003.md](feature/prd_003.md) | [ ] |
 | 3-4 | 주문 승인/거절 | [feature/prd_004.md](feature/prd_004.md) | [ ] |
 | 3-5 | 모니터링 | [feature/prd_005.md](feature/prd_005.md) | [ ] |

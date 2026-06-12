@@ -151,6 +151,9 @@
     <ClCompile Include="tests\Test_Phase3.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'!='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="tests\Test_Phase4.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'!='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="tests\TestRunner.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'!='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
@@ -158,6 +161,8 @@
     <ClCompile Include="src\model\Sample.cpp" />
     <ClCompile Include="src\model\Order.cpp" />
     <ClCompile Include="src\model\ProductionJob.cpp" />
+    <!-- Service 구현 파일 -->
+    <ClCompile Include="src\service\SampleService.cpp" />
     <!-- Repository 구현 파일 -->
     <ClCompile Include="src\repository\JsonSampleRepository.cpp" />
     <ClCompile Include="src\repository\JsonOrderRepository.cpp" />
@@ -172,6 +177,7 @@
     <ClInclude Include="src\view\View.h" />
     <ClInclude Include="src\controller\Controller.h" />
     <ClInclude Include="src\service\Service.h" />
+    <ClInclude Include="src\service\SampleService.h" />
     <ClInclude Include="src\repository\Repository.h" />
     <ClInclude Include="src\repository\ISampleRepository.h" />
     <ClInclude Include="src\repository\IOrderRepository.h" />
