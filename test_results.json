@@ -1,0 +1,1289 @@
+{
+  "tests": 135,
+  "failures": 0,
+  "disabled": 0,
+  "errors": 0,
+  "timestamp": "2026-06-12T15:48:37Z",
+  "time": "0.052s",
+  "name": "AllTests",
+  "testsuites": [
+    {
+      "name": "ConsoleUtilTest",
+      "tests": 2,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-06-12T15:48:37Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "InitEncodingReturnsTrue",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "ConsoleUtilTest"
+        },
+        {
+          "name": "InitEncodingCanBeCalledMultipleTimes",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "ConsoleUtilTest"
+        }
+      ]
+    },
+    {
+      "name": "DirectoryStructureTest",
+      "tests": 8,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-06-12T15:48:37Z",
+      "time": "0.001s",
+      "testsuite": [
+        {
+          "name": "SrcModelDirExists",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "DirectoryStructureTest"
+        },
+        {
+          "name": "SrcViewDirExists",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "DirectoryStructureTest"
+        },
+        {
+          "name": "SrcControllerDirExists",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "DirectoryStructureTest"
+        },
+        {
+          "name": "SrcServiceDirExists",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "DirectoryStructureTest"
+        },
+        {
+          "name": "SrcRepositoryDirExists",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "DirectoryStructureTest"
+        },
+        {
+          "name": "SrcUtilDirExists",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "DirectoryStructureTest"
+        },
+        {
+          "name": "DataDirExists",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "DirectoryStructureTest"
+        },
+        {
+          "name": "TestsDirExists",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "DirectoryStructureTest"
+        }
+      ]
+    },
+    {
+      "name": "PlaceholderHeaderTest",
+      "tests": 6,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-06-12T15:48:37Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "ModelHeaderExists",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "PlaceholderHeaderTest"
+        },
+        {
+          "name": "ViewHeaderExists",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "PlaceholderHeaderTest"
+        },
+        {
+          "name": "ControllerHeaderExists",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "PlaceholderHeaderTest"
+        },
+        {
+          "name": "ServiceHeaderExists",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "PlaceholderHeaderTest"
+        },
+        {
+          "name": "RepositoryHeaderExists",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "PlaceholderHeaderTest"
+        },
+        {
+          "name": "ConsoleUtilHeaderExists",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "PlaceholderHeaderTest"
+        }
+      ]
+    },
+    {
+      "name": "SampleTest",
+      "tests": 7,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-06-12T15:48:37Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "ConstructorSetsAllFields",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "SampleTest"
+        },
+        {
+          "name": "GetSampleId",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "SampleTest"
+        },
+        {
+          "name": "GetName",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "SampleTest"
+        },
+        {
+          "name": "GetAvgProdTime",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "SampleTest"
+        },
+        {
+          "name": "GetYield",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "SampleTest"
+        },
+        {
+          "name": "GetStock",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "SampleTest"
+        },
+        {
+          "name": "ToStringContainsSampleId",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "SampleTest"
+        }
+      ]
+    },
+    {
+      "name": "OrderTest",
+      "tests": 9,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-06-12T15:48:37Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "ConstructorSetsAllFields",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "OrderTest"
+        },
+        {
+          "name": "DefaultStatusIsReserved",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "OrderTest"
+        },
+        {
+          "name": "SetStatusChangesStatus",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "OrderTest"
+        },
+        {
+          "name": "GetOrderId",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "OrderTest"
+        },
+        {
+          "name": "GetSampleId",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "OrderTest"
+        },
+        {
+          "name": "GetCustomerName",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "OrderTest"
+        },
+        {
+          "name": "GetQuantity",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "OrderTest"
+        },
+        {
+          "name": "GetCreatedAt",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "OrderTest"
+        },
+        {
+          "name": "ToStringContainsOrderId",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "OrderTest"
+        }
+      ]
+    },
+    {
+      "name": "ProductionJobTest",
+      "tests": 9,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-06-12T15:48:37Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "ConstructorSetsAllFields",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "ProductionJobTest"
+        },
+        {
+          "name": "GetJobId",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "ProductionJobTest"
+        },
+        {
+          "name": "GetOrderId",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "ProductionJobTest"
+        },
+        {
+          "name": "GetSampleId",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "ProductionJobTest"
+        },
+        {
+          "name": "GetShortage",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "ProductionJobTest"
+        },
+        {
+          "name": "GetActualQty",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "ProductionJobTest"
+        },
+        {
+          "name": "GetTotalTime",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "ProductionJobTest"
+        },
+        {
+          "name": "GetStartTime",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "ProductionJobTest"
+        },
+        {
+          "name": "ToStringContainsJobId",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "ProductionJobTest"
+        }
+      ]
+    },
+    {
+      "name": "UserRoleTest",
+      "tests": 2,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-06-12T15:48:37Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "OrderManagerValue",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "UserRoleTest"
+        },
+        {
+          "name": "ProductionManagerValue",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "UserRoleTest"
+        }
+      ]
+    },
+    {
+      "name": "MockSampleRepositoryTest",
+      "tests": 5,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-06-12T15:48:37Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "AddCallsRepository",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "MockSampleRepositoryTest"
+        },
+        {
+          "name": "FindByIdReturnsOptional",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "MockSampleRepositoryTest"
+        },
+        {
+          "name": "FindAllReturnsVector",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "MockSampleRepositoryTest"
+        },
+        {
+          "name": "UpdateCallsRepository",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "MockSampleRepositoryTest"
+        },
+        {
+          "name": "RemoveCallsRepository",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "MockSampleRepositoryTest"
+        }
+      ]
+    },
+    {
+      "name": "MockOrderRepositoryTest",
+      "tests": 4,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-06-12T15:48:37Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "AddCallsRepository",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "MockOrderRepositoryTest"
+        },
+        {
+          "name": "FindByStatusReturnsFiltered",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "MockOrderRepositoryTest"
+        },
+        {
+          "name": "UpdateCallsRepository",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "MockOrderRepositoryTest"
+        },
+        {
+          "name": "RemoveCallsRepository",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "MockOrderRepositoryTest"
+        }
+      ]
+    },
+    {
+      "name": "MockProductionRepositoryTest",
+      "tests": 4,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-06-12T15:48:37Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "EnqueueCallsRepository",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "MockProductionRepositoryTest"
+        },
+        {
+          "name": "FrontReturnsOptional",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "MockProductionRepositoryTest"
+        },
+        {
+          "name": "DequeueCallsRepository",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "MockProductionRepositoryTest"
+        },
+        {
+          "name": "IsEmptyReturnsBool",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "MockProductionRepositoryTest"
+        }
+      ]
+    },
+    {
+      "name": "JsonSampleRepositoryTest",
+      "tests": 6,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-06-12T15:48:37Z",
+      "time": "0.011s",
+      "testsuite": [
+        {
+          "name": "InitiallyEmpty",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "JsonSampleRepositoryTest"
+        },
+        {
+          "name": "AddAndFindById",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0.001s",
+          "classname": "JsonSampleRepositoryTest"
+        },
+        {
+          "name": "AddAndFindAll",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0.003s",
+          "classname": "JsonSampleRepositoryTest"
+        },
+        {
+          "name": "UpdateChangesData",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0.002s",
+          "classname": "JsonSampleRepositoryTest"
+        },
+        {
+          "name": "RemoveDeletesItem",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0.001s",
+          "classname": "JsonSampleRepositoryTest"
+        },
+        {
+          "name": "PersistsAcrossInstances",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0.002s",
+          "classname": "JsonSampleRepositoryTest"
+        }
+      ]
+    },
+    {
+      "name": "JsonOrderRepositoryTest",
+      "tests": 6,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-06-12T15:48:37Z",
+      "time": "0.011s",
+      "testsuite": [
+        {
+          "name": "InitiallyEmpty",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "JsonOrderRepositoryTest"
+        },
+        {
+          "name": "AddAndFindById",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0.001s",
+          "classname": "JsonOrderRepositoryTest"
+        },
+        {
+          "name": "FindByStatusReturnsMatching",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0.002s",
+          "classname": "JsonOrderRepositoryTest"
+        },
+        {
+          "name": "UpdateChangesStatus",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0.002s",
+          "classname": "JsonOrderRepositoryTest"
+        },
+        {
+          "name": "RemoveDeletesItem",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0.002s",
+          "classname": "JsonOrderRepositoryTest"
+        },
+        {
+          "name": "PersistsAcrossInstances",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0.003s",
+          "classname": "JsonOrderRepositoryTest"
+        }
+      ]
+    },
+    {
+      "name": "JsonProductionRepositoryTest",
+      "tests": 6,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-06-12T15:48:37Z",
+      "time": "0.014s",
+      "testsuite": [
+        {
+          "name": "InitiallyEmptyAndIsEmptyTrue",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "JsonProductionRepositoryTest"
+        },
+        {
+          "name": "EnqueueAndFrontReturnsFirst",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0.002s",
+          "classname": "JsonProductionRepositoryTest"
+        },
+        {
+          "name": "DequeueRemovesFirst",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0.002s",
+          "classname": "JsonProductionRepositoryTest"
+        },
+        {
+          "name": "FindAllReturnsAll",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0.002s",
+          "classname": "JsonProductionRepositoryTest"
+        },
+        {
+          "name": "IsEmptyAfterDequeueAll",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0.001s",
+          "classname": "JsonProductionRepositoryTest"
+        },
+        {
+          "name": "PersistsAcrossInstances",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0.004s",
+          "classname": "JsonProductionRepositoryTest"
+        }
+      ]
+    },
+    {
+      "name": "SampleServiceTest",
+      "tests": 13,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-06-12T15:48:37Z",
+      "time": "0.001s",
+      "testsuite": [
+        {
+          "name": "RegisterSample_ValidSample_CallsRepoAdd",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "SampleServiceTest"
+        },
+        {
+          "name": "RegisterSample_DuplicateId_ThrowsInvalidArgument",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "SampleServiceTest"
+        },
+        {
+          "name": "RegisterSample_InvalidIdFormat_ThrowsInvalidArgument",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "SampleServiceTest"
+        },
+        {
+          "name": "RegisterSample_InvalidYieldZero_ThrowsInvalidArgument",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "SampleServiceTest"
+        },
+        {
+          "name": "RegisterSample_InvalidYieldOverOne_ThrowsInvalidArgument",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "SampleServiceTest"
+        },
+        {
+          "name": "RegisterSample_InvalidAvgProdTimeZero_ThrowsInvalidArgument",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "SampleServiceTest"
+        },
+        {
+          "name": "GetAllSamples_ReturnsAllFromRepo",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "SampleServiceTest"
+        },
+        {
+          "name": "GetAllSamples_EmptyRepo_ReturnsEmptyVector",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "SampleServiceTest"
+        },
+        {
+          "name": "FindSampleById_ExistsReturnsOptional",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "SampleServiceTest"
+        },
+        {
+          "name": "FindSampleById_NotExistsReturnsNullopt",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "SampleServiceTest"
+        },
+        {
+          "name": "SearchSamples_ByName_ReturnsMatching",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "SampleServiceTest"
+        },
+        {
+          "name": "SearchSamples_ById_ReturnsMatching",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "SampleServiceTest"
+        },
+        {
+          "name": "SearchSamples_NoMatch_ReturnsEmpty",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "SampleServiceTest"
+        }
+      ]
+    },
+    {
+      "name": "OrderServiceTest",
+      "tests": 22,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-06-12T15:48:37Z",
+      "time": "0.004s",
+      "testsuite": [
+        {
+          "name": "PlaceOrder_ValidInput_ReturnsReservedOrder",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "OrderServiceTest"
+        },
+        {
+          "name": "PlaceOrder_InvalidSampleId_Throws",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "OrderServiceTest"
+        },
+        {
+          "name": "PlaceOrder_ZeroQuantity_Throws",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "OrderServiceTest"
+        },
+        {
+          "name": "PlaceOrder_NegativeQuantity_Throws",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "OrderServiceTest"
+        },
+        {
+          "name": "PlaceOrder_ValidInput_OrderAddedToRepo",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "OrderServiceTest"
+        },
+        {
+          "name": "ApproveOrder_NotFound_Throws",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "OrderServiceTest"
+        },
+        {
+          "name": "ApproveOrder_NotReserved_Throws",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "OrderServiceTest"
+        },
+        {
+          "name": "ApproveOrder_SufficientStock_UpdatesToConfirmed",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "OrderServiceTest"
+        },
+        {
+          "name": "ApproveOrder_SufficientStock_DeductsStock",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "OrderServiceTest"
+        },
+        {
+          "name": "ApproveOrder_InsufficientStock_UpdatesToProducing",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "OrderServiceTest"
+        },
+        {
+          "name": "ApproveOrder_InsufficientStock_EnqueuesCorrectJob",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "OrderServiceTest"
+        },
+        {
+          "name": "ApproveOrder_ExactStock_UpdatesToConfirmed",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "OrderServiceTest"
+        },
+        {
+          "name": "RejectOrder_NotFound_Throws",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "OrderServiceTest"
+        },
+        {
+          "name": "RejectOrder_NotReserved_Throws",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "OrderServiceTest"
+        },
+        {
+          "name": "RejectOrder_ValidOrder_UpdatesToRejected",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "OrderServiceTest"
+        },
+        {
+          "name": "ReleaseOrder_NotFound_Throws",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "OrderServiceTest"
+        },
+        {
+          "name": "ReleaseOrder_NotConfirmed_Throws",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "OrderServiceTest"
+        },
+        {
+          "name": "ReleaseOrder_ValidOrder_UpdatesToRelease",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "OrderServiceTest"
+        },
+        {
+          "name": "GetReservedOrders_ReturnsReservedList",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "OrderServiceTest"
+        },
+        {
+          "name": "FindOrderById_ExistsReturnsOrder",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "OrderServiceTest"
+        },
+        {
+          "name": "FindOrderById_NotExistsReturnsNullopt",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "OrderServiceTest"
+        },
+        {
+          "name": "GetConfirmedOrders_ReturnsConfirmedList",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "OrderServiceTest"
+        }
+      ]
+    },
+    {
+      "name": "ProductionServiceTest",
+      "tests": 13,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-06-12T15:48:37Z",
+      "time": "0.003s",
+      "testsuite": [
+        {
+          "name": "Enqueue_AddsJobToRepo",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "ProductionServiceTest"
+        },
+        {
+          "name": "GetQueue_ReturnsAllJobs",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "ProductionServiceTest"
+        },
+        {
+          "name": "GetCurrentJob_ReturnsFirstJob",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "ProductionServiceTest"
+        },
+        {
+          "name": "GetCurrentJob_EmptyQueue_ReturnsNullopt",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "ProductionServiceTest"
+        },
+        {
+          "name": "GetElapsedQty_ZeroElapsed",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "ProductionServiceTest"
+        },
+        {
+          "name": "GetElapsedQty_PartialProduction",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "ProductionServiceTest"
+        },
+        {
+          "name": "GetElapsedQty_CappedAtActualQty",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "ProductionServiceTest"
+        },
+        {
+          "name": "CheckCompletion_EmptyQueue_ReturnsFalse",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "ProductionServiceTest"
+        },
+        {
+          "name": "CheckCompletion_NotComplete_ReturnsFalse",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "ProductionServiceTest"
+        },
+        {
+          "name": "CheckCompletion_Complete_ReturnsTrue",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "ProductionServiceTest"
+        },
+        {
+          "name": "CheckCompletion_Complete_UpdatesStockCorrectly",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "ProductionServiceTest"
+        },
+        {
+          "name": "CheckCompletion_Complete_OrderStatusBecomesConfirmed",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "ProductionServiceTest"
+        },
+        {
+          "name": "CheckCompletion_Complete_DequeuesJob",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "ProductionServiceTest"
+        }
+      ]
+    },
+    {
+      "name": "ConsoleHelperTest",
+      "tests": 9,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-06-12T15:48:37Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "BuildProgressBar_ZeroPercent_AllEmpty",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "ConsoleHelperTest"
+        },
+        {
+          "name": "BuildProgressBar_HundredPercent_AllFilled",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "ConsoleHelperTest"
+        },
+        {
+          "name": "BuildProgressBar_FiftyPercent_HalfFilled",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "ConsoleHelperTest"
+        },
+        {
+          "name": "BuildProgressBar_EightyPercent_EightFilled",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "ConsoleHelperTest"
+        },
+        {
+          "name": "BuildProgressBar_Width5_CorrectLength",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "ConsoleHelperTest"
+        },
+        {
+          "name": "GetStockStatus_ZeroStock_ReturnsDepleted",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "ConsoleHelperTest"
+        },
+        {
+          "name": "GetStockStatus_ZeroStockZeroPending_ReturnsDepleted",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "ConsoleHelperTest"
+        },
+        {
+          "name": "GetStockStatus_StockLessThanPending_ReturnsShort",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "ConsoleHelperTest"
+        },
+        {
+          "name": "GetStockStatus_StockEqualOrMoreThanPending_ReturnsSufficient",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "ConsoleHelperTest"
+        }
+      ]
+    },
+    {
+      "name": "OrderIdGeneratorTest",
+      "tests": 4,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-06-12T15:48:37Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "Generate_ZeroOrders_ReturnsPaddedOne",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "OrderIdGeneratorTest"
+        },
+        {
+          "name": "Generate_FiveOrders_ReturnsSix",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "OrderIdGeneratorTest"
+        },
+        {
+          "name": "Generate_NineOrders_ReturnsTen",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "OrderIdGeneratorTest"
+        },
+        {
+          "name": "Generate_DatePrefixMatchesInput",
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-06-12T15:48:37Z",
+          "time": "0s",
+          "classname": "OrderIdGeneratorTest"
+        }
+      ]
+    }
+  ]
+}

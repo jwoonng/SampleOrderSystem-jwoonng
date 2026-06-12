@@ -29,8 +29,8 @@ void ProductionView::showCurrentJob(const ProductionJob& job,
                                      const std::wstring& currentTime)
 {
     ConsoleHelper::printDivider();
-    std::wcout << L"  주문번호  " << job.getOrderId()
-               << L"   시료  " << sample.getName() << L"\n";
+    std::wcout << L"  주문번호  " << job.getOrderId() << L"\n";
+    std::wcout << L"  시료명    " << sample.getName() << L"\n";
 
     // 진행률은 주문에 필요한 수량(shortage) 기준으로 표시
     // shortage 달성(= 주문 충족) 시 100%에서 유지, 이후 잉여분 생산은 계속
@@ -38,7 +38,7 @@ void ProductionView::showCurrentJob(const ProductionJob& job,
     int percent = (progressTarget > 0) ? (elapsedQty * 100 / progressTarget) : 100;
     if (percent > 100) percent = 100;
 
-    std::wcout << L"  진행  "
+    std::wcout << L"  진행      "
                << ConsoleHelper::buildProgressBar(percent, 10)
                << L"  " << percent << L"%\n";
 
@@ -50,7 +50,7 @@ void ProductionView::showCurrentJob(const ProductionJob& job,
     wchar_t timeBuf[16];
     swprintf_s(timeBuf, 16, L"%02d:%02d", hh, mm);
 
-    std::wcout << L"  완료 예정  " << timeBuf << L"\n";
+    std::wcout << L"  완료예정  " << timeBuf << L"\n";
     ConsoleHelper::printDivider();
 }
 
@@ -70,13 +70,12 @@ void ProductionView::showQueue(const std::vector<ProductionJob>& jobs,
     ConsoleHelper::printDivider();
     std::wcout << L"  대기 중인 주문 (FIFO 순)\n";
     ConsoleHelper::printDivider();
-    // 컬럼 표시 너비: 순서=5, 주문번호=22, 시료=16, 주문량=8, 부족분=8, 실생산량=10, 예상완료=나머지
+    // 컬럼 표시 너비: 순서=5, 주문번호=20, 시료명=12, 부족분=6, 실생산량=8, 예상완료=나머지
     std::wcout << ConsoleHelper::padRight(L"순서", 5)
-               << ConsoleHelper::padRight(L"주문번호", 22)
-               << ConsoleHelper::padRight(L"시료", 16)
-               << ConsoleHelper::padRight(L"주문량", 8)
-               << ConsoleHelper::padRight(L"부족분", 8)
-               << ConsoleHelper::padRight(L"실생산량", 10)
+               << ConsoleHelper::padRight(L"주문번호", 20)
+               << ConsoleHelper::padRight(L"시료명", 12)
+               << ConsoleHelper::padRight(L"부족분", 6)
+               << ConsoleHelper::padRight(L"실생산량", 8)
                << L"예상완료\n";
     ConsoleHelper::printDivider();
 
@@ -102,11 +101,10 @@ void ProductionView::showQueue(const std::vector<ProductionJob>& jobs,
         accMin = completionMin;
 
         std::wcout << L"  " << std::left << std::setw(3) << seq++
-                   << ConsoleHelper::padRight(j.getOrderId(), 22)
-                   << ConsoleHelper::padRight(sampleName, 16)
-                   << std::left << std::setw(8)  << j.getActualQty()
-                   << std::left << std::setw(8)  << j.getShortage()
-                   << std::left << std::setw(10) << j.getActualQty()
+                   << ConsoleHelper::padRight(j.getOrderId(), 20)
+                   << ConsoleHelper::padRight(sampleName, 12)
+                   << std::left << std::setw(4) << j.getShortage()  << L"  "
+                   << std::left << std::setw(6) << j.getActualQty() << L"  "
                    << timeBuf << L"\n";
     }
     ConsoleHelper::printDivider();
@@ -114,5 +112,7 @@ void ProductionView::showQueue(const std::vector<ProductionJob>& jobs,
 
 int ProductionView::promptChoice()
 {
-    return InputHelper::promptInt(L"선택");
+    int choice = InputHelper::promptInt(L"선택");
+    std::wcout << L"\n";
+    return choice;
 }

@@ -1,0 +1,4 @@
+[
+  {"jobId":"JOB-ORD-20260612-0013","orderId":"ORD-20260612-0013","sampleId":"S-001","shortage":2,"actualQty":5,"totalTime":5,"startTime":"2026-06-12 17:15"},
+  {"jobId":"JOB-ORD-20260612-0014","orderId":"ORD-20260612-0014","sampleId":"S-001","shortage":2,"actualQty":5,"totalTime":5,"startTime":"2026-06-12 17:15"}
+]

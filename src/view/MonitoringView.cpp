@@ -10,7 +10,7 @@ void MonitoringView::showMenu(const std::wstring& currentTime)
     ConsoleHelper::printDoubleDivider();
     ConsoleHelper::printCyan(L"  [4] 모니터링   " + currentTime + L"\n");
     ConsoleHelper::printDivider();
-    std::wcout << L"  [1] 주문량 확인   [2] 재고량 확인   [0] 위로\n";
+    std::wcout << L"  [1] 주문량 확인   [2] 재고량 확인   [0] 뒤로\n";
     ConsoleHelper::printDivider();
 }
 
@@ -47,8 +47,8 @@ void MonitoringView::showStockStatus(const std::vector<Sample>& samples,
                                       const std::vector<Order>& allOrders)
 {
     ConsoleHelper::printDivider();
-    // 컬럼 표시 너비: 시료명=22, 재고=8, 상태=[배지]+2공백=8, 잔여율=나머지
-    std::wcout << ConsoleHelper::padRight(L"시료명", 22)
+    // 컬럼 표시 너비: 시료명=18, 재고=8, 상태=[배지]+2공백=8, 잔여율=나머지
+    std::wcout << ConsoleHelper::padRight(L"시료명", 18)
                << ConsoleHelper::padRight(L"재고", 8)
                << ConsoleHelper::padRight(L"상태", 8)
                << L"잔여율\n";
@@ -77,7 +77,7 @@ void MonitoringView::showStockStatus(const std::vector<Sample>& samples,
         else if (statusStr == L"고갈")
             statusColor = FOREGROUND_RED | FOREGROUND_INTENSITY;
 
-        std::wcout << ConsoleHelper::padRight(s.getName(), 22)
+        std::wcout << ConsoleHelper::padRight(s.getName(), 18)
                    << std::left << std::setw(8) << s.getStock();
         ConsoleHelper::printBadge(statusStr, statusColor);
         std::wcout << L"  " << ConsoleHelper::buildProgressBar(percent, 10)
@@ -88,5 +88,7 @@ void MonitoringView::showStockStatus(const std::vector<Sample>& samples,
 
 int MonitoringView::promptChoice()
 {
-    return InputHelper::promptInt(L"선택");
+    int choice = InputHelper::promptInt(L"선택");
+    std::wcout << L"\n";
+    return choice;
 }

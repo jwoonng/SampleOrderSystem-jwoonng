@@ -35,5 +35,7 @@ void MainView::showMenu()
 
 int MainView::promptChoice()
 {
-    return InputHelper::promptInt(L"선택");
+    int choice = InputHelper::promptInt(L"선택");
+    std::wcout << L"\n";
+    return choice;
 }

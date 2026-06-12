@@ -66,7 +66,7 @@ void SampleController::handleList(SampleService& sampleService)
                                        all.begin() + endIdx);
         view.showSampleTable(pageSlice, page, total);
 
-        std::wstring input = InputHelper::promptWString(L"[N] 다음 / [P] 이전 / [0] 위로");
+        std::wstring input = InputHelper::promptWString(L"[N] 다음 / [P] 이전 / [0] 뒤로");
         if (input == L"N" || input == L"n")
         {
             if (page * PAGE_SIZE < total) ++page;

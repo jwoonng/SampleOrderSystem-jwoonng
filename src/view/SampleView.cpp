@@ -10,7 +10,7 @@ void SampleView::showMenu()
     ConsoleHelper::printDoubleDivider();
     ConsoleHelper::printCyan(L"  [1] 시료 관리\n");
     ConsoleHelper::printDivider();
-    std::wcout << L"  [1] 시료 등록   [2] 시료 목록   [3] 시료 검색   [0] 위로\n";
+    std::wcout << L"  [1] 시료 등록   [2] 시료 목록   [3] 시료 검색   [0] 뒤로\n";
     ConsoleHelper::printDivider();
 }
 
@@ -18,22 +18,22 @@ void SampleView::showSampleTable(const std::vector<Sample>& samples,
                                   int page, int totalCount)
 {
     ConsoleHelper::printDivider();
-    // 컬럼 표시 너비(display columns): ID=10, 시료명=22, 평균생산시간=17(값8+단위9), 수율=8(값6+공백2)
+    // 컬럼 표시 너비(display columns): ID=10, 시료명=16, 생산시간=13(값5+단위8), 수율=6(값4+공백2)
     std::wcout << ConsoleHelper::padRight(L" ID", 10)
-               << ConsoleHelper::padRight(L"시료명", 22)
-               << ConsoleHelper::padRight(L"평균생산시간", 17)
-               << ConsoleHelper::padRight(L"수율", 8)
-               << L"현재재고\n";
+               << ConsoleHelper::padRight(L"시료명", 16)
+               << ConsoleHelper::padRight(L"생산시간", 13)
+               << ConsoleHelper::padRight(L"수율", 6)
+               << L"재고\n";
     ConsoleHelper::printDivider();
 
     for (const auto& s : samples)
     {
         std::wcout << L" "
                    << ConsoleHelper::padRight(s.getSampleId(), 9)
-                   << ConsoleHelper::padRight(s.getName(), 22)
-                   << std::left << std::setw(8) << s.getAvgProdTime()
-                   << L" min/ea  "
-                   << std::left << std::setw(6) << s.getYield()
+                   << ConsoleHelper::padRight(s.getName(), 16)
+                   << std::left << std::setw(5) << s.getAvgProdTime()
+                   << L" min/ea "
+                   << std::left << std::setw(4) << s.getYield()
                    << L"  "
                    << s.getStock() << L" ea\n";
     }
@@ -70,5 +70,7 @@ void SampleView::showSearchResult(const std::vector<Sample>& results)
 
 int SampleView::promptChoice()
 {
-    return InputHelper::promptInt(L"선택");
+    int choice = InputHelper::promptInt(L"선택");
+    std::wcout << L"\n";
+    return choice;
 }

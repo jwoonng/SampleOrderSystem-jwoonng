@@ -1,0 +1,4 @@
+[
+  {"sampleId":"S-001","name":"test1","avgProdTime":1,"yield":0.5,"stock":0},
+  {"sampleId":"S-002","name":"test2","avgProdTime":1,"yield":0.8,"stock":1}
+]

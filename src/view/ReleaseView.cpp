@@ -11,10 +11,11 @@ void ReleaseView::showConfirmedList(const std::vector<Order>& orders,
     ConsoleHelper::printDoubleDivider();
     ConsoleHelper::printCyan(L"  [6] 출고 처리\n");
     ConsoleHelper::printDivider();
+    // 컬럼 표시 너비(display columns): 번호=5, 주문번호=20, 고객=12, 시료=12, 수량=나머지
     std::wcout << ConsoleHelper::padRight(L"번호", 5)
-               << ConsoleHelper::padRight(L"주문번호", 22)
-               << ConsoleHelper::padRight(L"고객", 16)
-               << ConsoleHelper::padRight(L"시료", 16)
+               << ConsoleHelper::padRight(L"주문번호", 20)
+               << ConsoleHelper::padRight(L"고객", 12)
+               << ConsoleHelper::padRight(L"시료", 12)
                << L"수량\n";
     ConsoleHelper::printDivider();
 
@@ -31,9 +32,9 @@ void ReleaseView::showConfirmedList(const std::vector<Order>& orders,
             }
         }
         std::wcout << L"  " << std::left << std::setw(3) << idx++
-                   << ConsoleHelper::padRight(o.getOrderId(), 22)
-                   << ConsoleHelper::padRight(o.getCustomerName(), 16)
-                   << ConsoleHelper::padRight(sampleName, 16)
+                   << ConsoleHelper::padRight(o.getOrderId(), 20)
+                   << ConsoleHelper::padRight(o.getCustomerName(), 12)
+                   << ConsoleHelper::padRight(sampleName, 12)
                    << o.getQuantity() << L" ea\n";
     }
     ConsoleHelper::printDivider();
@@ -54,5 +55,7 @@ void ReleaseView::showReleaseResult(const Order& order,
 
 int ReleaseView::promptChoice()
 {
-    return InputHelper::promptInt(L"출고할 번호");
+    int choice = InputHelper::promptInt(L"출고할 번호");
+    std::wcout << L"\n";
+    return choice;
 }

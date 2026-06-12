@@ -10,7 +10,7 @@ void ProductionController::run(ProductionService& productionService,
 {
     showProductionStatus(productionService, sampleService, orderService);
     // 단순 조회 화면 — promptChoice로 뒤로가기 처리
-    InputHelper::promptInt(L"[0] 위로");
+    InputHelper::promptInt(L"[0] 뒤로");
 }
 
 void ProductionController::showProductionStatus(ProductionService& productionService,
